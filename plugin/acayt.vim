@@ -27,7 +27,6 @@ function CRWithPopup()
 endfunction
 
 function SetupCompletion()
-  echom "Setting up Completion"
   set completeopt=menuone,noinsert,noselect
   autocmd TextChangedI <buffer> call CompleteIfNecessary()
   inoremap <expr><CR> CRWithPopup()
