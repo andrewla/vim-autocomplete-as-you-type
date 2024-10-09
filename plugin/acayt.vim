@@ -1,10 +1,10 @@
-" Very basic support for autocomplete-as-you-type. Assumes that completefunc
+" Very basic support for autocomplete-as-you-type. Assumes that omnifunc
 " will be set to something useful.
 
 function CompleteIfNecessary()
   " Only attempt autocomplete if there are some non-whitespace characters
-  if !empty(trim(getline('.')))
-    call feedkeys("\<C-X>\<C-U>")
+  if !empty(trim(getline('.'))) && &omnifunc != ""
+    call feedkeys("\<C-X>\<C-O>")
   endif
 endfunction
 
